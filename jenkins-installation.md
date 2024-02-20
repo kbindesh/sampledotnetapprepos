@@ -1,11 +1,17 @@
 ## Follow below steps to install the Jenkins on Centos 7.9:
 
-    1. sudo yum install java-11-openjdk-devel
-    2. java --version
-    3. sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-    4. sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key 
-    5. sudo yum install jenkins
-    6. sudo systemctl start jenkins
+sudo yum install -y java-11-openjdk-devel
+java --version
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key 
+sudo yum install -y jenkins
+sudo systemctl start jenkins
+sudo yum install -y git
+sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+sudo yum install -y dotnet-sdk-7.0
+sudo yum install -y aspnetcore-runtime-7.0
+sudo chmod -R a+rwx /var/lib/jenkins
+sudo chmod -R a+rwx /tmp/NuGetScratch
 
 ## [Install .NET SDK and Runtimes](https://learn.microsoft.com/en-us/dotnet/core/install/linux-centos)
    1. sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
